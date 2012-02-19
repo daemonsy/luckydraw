@@ -1,0 +1,27 @@
+<%= simple_nested_form_for(@draw) do |f| %>
+  <% if @draw.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@draw.errors.count, "error") %> prohibited this draw from being saved:</h2>
+
+      <ul>
+      <% @draw.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :name, :label => 'Name this Lucky Draw' %>
+  
+  <%=f.fields_for :participants do |p|%>
+    <%= p.input :name, :label => 'Participant Name' %>
+    <%= p.link_to_remove "Remove Entry" %>
+  
+  <% end %>
+  
+  <p><%= f.link_to_add "Add a Participant", :participants %></p>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

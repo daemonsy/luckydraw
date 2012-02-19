@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lucky</title>
+  <title>UOB Sector Retreat Lucky Draw - Miao Jing</title>
   <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <%if current_page?(root_url)%>
+    <%= javascript_include_tag "jquery", "/javascripts/jquery.isotope.min.js", controller_name%>
+  <% else %>
+    <%= javascript_include_tag "application"%>
+  <%end%>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div id="wrapper">
+  <div id="content">
+    <div id="container-wrapper">
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

@@ -1,4 +1,15 @@
 Lucky::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  root :to => 'draws#index'
+  
+  resources :draws
+
+  resources :prizes
+
+  resources :participants
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

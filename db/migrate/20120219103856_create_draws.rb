@@ -1,0 +1,9 @@
+class CreateDraws < ActiveRecord::Migration
+  def change
+    create_table :draws do |t|
+      t.string :name
+
+      t.timestamps
+    end
+  end
+end

@@ -1,0 +1,28 @@
+<h1 style="text-align:center">UOB Retreat Lucky Draw</h1>
+<%=simple_form_for Draw.new, :url=>draws_path, :remote=>true, :method=>:post do |f|%> 
+<%= f.input :prize_id, :input_html=> {:id=>'luckydraw-prize'}, :collection=>@prizes%>
+<div id="container" class="cf">
+
+      <% @participants.each do |p| %>
+        <div id="participant-<%=p.id%>" class="participant">
+          <input type="hidden" class="winner-id" value="<%=p.id%>">
+          <p><%= p.name %></p>
+        </div>
+      <% end %>
+
+  
+        <%= f.input :name, :as=> :hidden, :input_html=> {:id=>'luckydraw-name', :value=>'Winner'}%>
+        <%= f.input :participant_id, :as=>:hidden, :input_html=> {:id=>'luckydraw-winner-id'}%>
+
+</div>
+  
+  <div class="buttons-container">
+    <button id="draw-button" onclick="startDraw();return false;">Draw!</button>
+    <button id="pick-button" onclick="stopDraw();return false;">Pick Winner!</button>
+    <button id="submit-button" onclick="reloadData();"> Submit! </button>
+  </div>
+  <br><br>
+  <p id="reload-button"><a href="#" onclick="reloadData();return false;">Reload Draw Without Saving</a></p>
+  
+  
+  <% end %>
