@@ -57,7 +57,7 @@ class DrawsController < ApplicationController
 
     respond_to do |format|
       if @draw.save
-        format.html { redirect_to @draw, notice: 'Draw was successfully created.' }
+        format.html { redirect_to draws_path, notice: 'Draw was successfully created.' }
         format.json { render json: @draw, status: :created, location: @draw }
       else
         format.html { render action: "new" }

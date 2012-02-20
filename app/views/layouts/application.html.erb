@@ -3,7 +3,7 @@
 <head>
   <title>UOB Sector Retreat Lucky Draw - Miao Jing</title>
   <%= stylesheet_link_tag    "application" %>
-  <%if current_page?(root_url)%>
+  <%if current_page?(root_url) || current_page?(draws_path)%>
     <%= javascript_include_tag "jquery", "/javascripts/jquery.isotope.min.js", controller_name%>
   <% else %>
     <%= javascript_include_tag "application"%>

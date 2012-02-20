@@ -4,13 +4,15 @@
 
 .participant{
   
-  width:150px;
+  width:100px;
   margin: 0 15px 20px 15px;
-  min-height:150px;
+  min-height:100px;
+  height:100px;
   float:left;
   text-align:center;
-  p {line-height:150px};
+  p {line-height:100px};
   border: 1px solid #666;
+  overflow:hidden;
 }
 
 .winner {
@@ -36,4 +38,12 @@ button {
 
 #reload-button {
   text-align:center;
+}
+
+#luckydraw-prize {
+  
+    width:250px;
+    min-height:30px;
+    font-size:18px;
+
 }

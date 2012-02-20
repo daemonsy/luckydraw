@@ -25,8 +25,10 @@ function stopDraw(){
 
 function pickWinner (){
   var winners = new Array();
-  var winners = $('div').filter('.participant');
-  var current_winner=Math.floor(Math.random()*(winners.length+1))
+  winners = $('div').filter('.participant');
+  console.log(winners.length)
+  console.log(winners[0])
+  var current_winner=Math.floor(Math.random()*(winners.length))
   winner = winners[current_winner];
   $(winner).attr('class','winner').hide();
   $('#container').isotope('remove', $('.participant'));
@@ -44,7 +46,7 @@ function reloadData() {
     $('#content').load('/draws #content',"success",function() {
       startLoad();
       initializeIsotope()
-      ;})}, 1500); 
+      ;})}, 1500);
   
 }
 function startLoad() {
