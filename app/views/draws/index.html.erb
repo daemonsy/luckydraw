@@ -1,4 +1,4 @@
-<h1 style="text-align:center">UOB Retreat Lucky Draw</h1>
+<%= image_tag "topbar-1000.png"%>
 <%=simple_form_for Draw.new, :url=>draws_path, :remote=>true, :method=>:post do |f|%> 
 <%= f.input :prize_id, :input_html=> {:id=>'luckydraw-prize'}, :collection=>@prizes%>
 <div id="container" class="cf">

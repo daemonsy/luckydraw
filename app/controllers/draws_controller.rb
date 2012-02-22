@@ -4,17 +4,17 @@ class DrawsController < ApplicationController
 
   
   def index
-    @participants = Array.new
-    @prizes = Array.new
+    @participants = Participant.find(:all,:include=>:draw)
+    @prizes = Prize.find(:all, :include=>:draw)
     
-    Participant.all.each do |p|
-      @participants << p if p.draw.nil?
-      puts @participants
+    @participants.each do |p|
+      @participants.delete(p) if p.draw.present?
+
     end
     
-    Prize.all.each do |prize|
-      @prizes << prize if prize.draw.nil?
-      puts @prizes
+    @prizes.each do |p|
+      @prizes.delete(p) if p.draw.present?
+
     end  
 
     respond_to do |format|

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>UOB Sector Retreat Lucky Draw - Miao Jing</title>
+  <title>CBS Retreat 2012 Lucky Draw - Miao Jing</title>
   <%= stylesheet_link_tag    "application" %>
   <%if current_page?(root_url) || current_page?(draws_path)%>
-    <%= javascript_include_tag "jquery", "/javascripts/jquery.isotope.min.js", controller_name%>
+    <!--<%#= javascript_include_tag "jquery.js", "/javascripts/jquery.isotope.min.js", controller_name%>-->
+    <%= javascript_include_tag "app" %>
   <% else %>
     <%= javascript_include_tag "application"%>
   <%end%>
